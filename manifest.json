@@ -1,0 +1,31 @@
+{
+    "manifest_version": 2,
+
+    "name": "Chrome GIF Deanimator",
+    "description": "Removes animation from GIF images.",
+    "version": "1.0",
+
+    "permissions": [
+        "http://*/*",
+        "https://*/*"
+    ],
+    
+    "content_scripts": [
+        {
+            "js": [
+                "content.js"
+            ],
+            "matches": [
+                "http://*/*",
+                "https://*/*"
+            ]
+        }
+    ],
+    
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": false
+    }
+}
