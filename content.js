@@ -1,13 +1,16 @@
 (function() {
 
-    var replaceLoopId;
+    var replaceLoopId = null;
 
     function startReplaceLoop() {
-        replaceLoopId = setInterval(replaceGifImageElements, 1000);
+        if (replaceLoopId === null) {
+            replaceLoopId = setInterval(replaceGifImageElements, 1000);
+        }
     }
 
     function stopReplaceLoop() {
         clearInterval(replaceLoopId);
+        replaceLoopId = null;
     }
 
     function revertImagesToOriginalUrls() {
